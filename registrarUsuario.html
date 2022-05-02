@@ -5,6 +5,21 @@
         <title>
             ABD Games - Registrar Usuario
         </title>
+        <style>
+            .button {
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
+            
+            .button2 {background-color: #008CBA;} 
+            </style>
     </head>
 
     <body>
@@ -29,6 +44,26 @@
 
         <br>
         <br>
+
+        <FONT COLOR="white">
+            <form action="Registrar.php" method="post">
+                <fieldset>
+    
+                    <center>
+                        <br>
+                        <legend><FONT SIZE=6> <b>Registrarse </b></FONT> </legend>
+                        <br>
+                        Nombre de usuario <p><input type = "text" name = "nom"></p>
+                        Contraseña <p><input type = "password" name = "con"></p>
+                    </center>
+                   
+                </fieldset>
+                <br>
+                <div style="text-align: center;"><button type="submit" class="button button2">Registrar</button></div> 
+               
+            </form>
+    
+        </FONT>
 
 
     </body>

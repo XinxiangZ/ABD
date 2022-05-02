@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
-    <title>Iniciar_sesion</title>
+    <title>Registrar</title>
 
 </head>
 
@@ -16,9 +15,7 @@
         function conectar($host, $usuario, $contasenia, $db)
         {
 
-
             $db = @mysqli_connect($host, $usuario, $contasenia, $db);
-
             return $db;
         }
 
@@ -28,39 +25,32 @@
             if ($conexion) {
 
                 $ok = @mysqli_close($conexion);
-
             }
+
         }
 
         $busqueda = strtolower($_POST["nom"]);
         $contra = strtolower($_POST["con"]);
 
         if ($busqueda == "" ||  $contra == "") {
-            include("inicio.html");
+            include("registrarUsuario.html");
         } else {
 
             $db = conectar('localhost', 'root', '', 'abd_games');
 
             $sql = "SELECT * FROM usuario WHERE id = '$busqueda'";
-
             $consulta = mysqli_query($db, $sql);
             $a = mysqli_num_rows($consulta);
 
             if ($a > 0) {
-
-                $fila = mysqli_fetch_assoc($consulta);
-
-                if ($fila['contrasenia'] != $contra) {
-                    include ("inicio.html");
-                    echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>Contraseña incorrecto</p></FONT> </center>";
-                } else {
-                    
-                    include ("inicio.html");
-                    echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Acceso correcto</p></FONT> </center>";
-                }
+                include ("registrarUsuario.html");
+                echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Error Usuario ya registrado</p></FONT> </center>";
             } else {
-                include ("inicio.html");
-                echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>Usuario no encotrado</p></FONT> </center>";
+                mysqli_query($db, "INSERT INTO usuario(id, contrasenia) VALUES ('$busqueda','$contra')");
+               
+                echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Usuario registrado con exito</p></FONT> </center>";
+			    
+               
             }
 
 
@@ -75,5 +65,4 @@
     </div>
 
 </body>
-
 </html>
