@@ -6,6 +6,27 @@
             ABD Games - Inicio
         </title>
     </head>
+
+    <head>
+        <style>
+        .button {
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        
+        .button1 {background-color: #4CAF50;} 
+        .button2 {background-color: #008CBA;} 
+        </style>
+        </head>
+
+
     <body>
 
         <body style="background-color:#040405ee"> 
@@ -22,28 +43,35 @@
             <br>
             <br>
             <FONT SIZE=15 COLOR= "#85C1E9"> &nbsp;&nbsp;&nbsp;Bienvenido a ABD Games</FONT> 
-            <FONT SIZE=5 COLOR=  "#FBFCFC" > <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¡Registrate y disfruta de todos los juegos que tenemos disponibles de forma gratuita!</p></FONT>
+            <FONT SIZE=6  COLOR=  "#FBFCFC" > <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¡Registrate y disfruta de todos los juegos que tenemos disponibles de forma gratuita!</p></FONT>
         </div>
         </center>
 
+        <br>
+        <br>
+
         <FONT COLOR="white">
-            <form action="Iniciar sesión.php" method="post">
+        <form action="Iniciar sesión.php" method="post">
             <fieldset>
-                <legend>Introduzca los datos personales</legend>
-                Nombre <br><input type = "text" name = "nom"><br>
-                Contraseña <br><input type = "password" name = "con">
-                </FONT>
+
+                <center>
+                    <br>
+                    <legend><FONT SIZE=6> <b>Iniciar sesión </b></FONT> </legend>
+                    <br>
+                    Nombre de usuario <p><input type = "text" name = "nom"></p>
+                    Contraseña <p><input type = "password" name = "con"></p>
+                </center>
                
             </fieldset>
-            <input type = "image" src="entrar.png" name = "aceptar" value = "Entrar"width= "143" height= "81" title = "Entrar usuario">
-            </form>
-            
-            
-            </FONT>
-
-
-
+            <br>
+            <div style="text-align: center;"><button type="submit" class="button button2">Entrar</button></div> 
         </form>
+
+        <form action="registrarUsuario.html" method="post">
+            <div style="text-align: center;"> <button type="submit" class="button button1">Registrarse</button> </div>
+        </form>
+            
+        </FONT>
 
     </body>
 </html>
