@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Iniciar_sesion</title>
+    <title>ABD Games - Inicio</title>
 
 </head>
 
@@ -37,6 +37,7 @@
 
         if ($busqueda == "" ||  $contra == "") {
             include("inicio.html");
+            echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>No se puede dejar los campos vacíos</p></FONT> </center>";
         } else {
 
             $db = conectar('localhost', 'root', '', 'abd_games');
@@ -55,8 +56,7 @@
                     echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>Contraseña incorrecto</p></FONT> </center>";
                 } else {
                     
-                    include ("inicio.html");
-                    echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Acceso correcto</p></FONT> </center>";
+                     Header("Location: menu.html");
                 }
             } else {
                 include ("inicio.html");
