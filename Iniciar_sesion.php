@@ -36,7 +36,7 @@
         $contra = strtolower($_POST["con"]);
 
         if ($busqueda == "" ||  $contra == "") {
-            include("inicio.html");
+            include("inicioUsuario.html");
             echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>No se puede dejar los campos vacíos</p></FONT> </center>";
         } else {
 
@@ -52,14 +52,14 @@
                 $fila = mysqli_fetch_assoc($consulta);
 
                 if ($fila['contrasenia'] != $contra) {
-                    include ("inicio.html");
+                    include ("inicioUsuario.html");
                     echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>Contraseña incorrecto</p></FONT> </center>";
                 } else {
                     
-                     Header("Location: menu.html");
+                     Header("Location: tienda.html");
                 }
             } else {
-                include ("inicio.html");
+                include ("inicioUsuario.html");
                 echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>Usuario no encotrado</p></FONT> </center>";
             }
 
