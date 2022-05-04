@@ -45,7 +45,7 @@
 
             if ($a > 0) {
                 include ("registrarUsuario.html");
-                echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Error Usuario ya registrado</p></FONT> </center>";
+                echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Error: Usuario ya registrado</p></FONT> </center>";
             } else {
                 mysqli_query($db, "INSERT INTO usuario(id, contrasenia) VALUES ('$busqueda','$contra')");
                 include ("tienda.html");

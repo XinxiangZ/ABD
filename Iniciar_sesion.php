@@ -53,7 +53,7 @@
 
                 if ($fila['contrasenia'] != $contra) {
                     include ("entradaPagina.html");
-                    echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>Contraseña incorrecto</p></FONT> </center>";
+                    echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>Contraseña incorrecta</p></FONT> </center>";
                 } else {
                     
                      Header("Location: tienda.html");
