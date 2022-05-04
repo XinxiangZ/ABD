@@ -48,11 +48,7 @@
                 echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Error Usuario ya registrado</p></FONT> </center>";
             } else {
                 mysqli_query($db, "INSERT INTO usuario(id, contrasenia) VALUES ('$busqueda','$contra')");
-<<<<<<< Updated upstream
-               
-=======
                 include ("tienda.html");
->>>>>>> Stashed changes
                 echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Usuario registrado con exito</p></FONT> </center>";
 			  
                
