@@ -9,16 +9,17 @@
 
 <body>
     <div>
-    <?php
+             <?php
 
-$db = new mysqli('localhost', 'root', '', 'abd_games');
-$consulta = mysqli_query($db, "SELECT * FROM juegos WHERE nombre = 'naraka'");
-$a = mysqli_num_rows($consulta);
-$fila = mysqli_fetch_assoc($consulta);
+                    $db = new mysqli('localhost', 'root', '', 'abd_games');
+                    $consulta = mysqli_query($db, "SELECT * FROM juegos WHERE nombre = 'naraka'");
+                    $fila = mysqli_fetch_assoc($consulta);
+                    $nombre=$fila["nombre"];
+                    $precio=$fila["precio"];
+                    echo "Tus puntos :";
+                    echo "&nbsp $nombre";
 
-echo "$fila[nombre]";
-echo "$fila[precio]";
-?>
+                 ?>
 
 
     </div>
