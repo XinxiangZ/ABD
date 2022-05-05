@@ -14,10 +14,10 @@
             <div class="menu">
                 <nav>
                     <ul>
-                        <li><a href="tienda.php">Tienda</a></li>
-                        <li><a href="biblioteca.php">Biblioteca</a></li>
-                        <li><a href="cuentaUsuario.php">Cuenta</a></li>
-                        <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
+                    <li><a href="tienda.php?nom=<?php echo $busqueda ?>">Tienda</a></li>
+                    <li><a href="biblioteca.php?nom=<?php echo $busqueda ?>">Biblioteca</a></li>
+                    <li><a href="cuentaUsuario.php?nom=<?php echo $busqueda ?>">Cuenta</a></li>
+                    <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
                     </ul>
                 </nav>
             </div>

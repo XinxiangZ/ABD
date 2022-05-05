@@ -33,7 +33,6 @@
             } else {
                 mysqli_query($db, "INSERT INTO usuario(id, contrasenia) VALUES ('$busqueda','$contra')");
                 include ("tienda.php");
-                echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Usuario registrado con exito</p></FONT> </center>";
 			  
             }
 
