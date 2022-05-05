@@ -24,10 +24,10 @@
         <div class="menu">
             <nav>
                 <ul>
-                        <li><a href="tienda.php">Tienda</a></li>
-                        <li><a href="biblioteca.php">Biblioteca</a></li>
-                        <li><a href="cuentaUsuario.php">Cuenta</a></li>
-                        <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
+                    <li><a href="tienda.php?nom=<?php echo $busqueda ?>">Tienda</a></li>
+                    <li><a href="biblioteca.php">Biblioteca</a></li>
+                    <li><a href="cuentaUsuario.php?nom=<?php echo $busqueda ?>">Cuenta</a></li>
+                    <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -56,43 +56,33 @@
             <br>
             <br>
             <br>
-            <div class="contenedor-imagenes1">
-                <img src="img/naraka.PNG" width="450px">
-                <img src="img/dbd.jpg" width="450px">
-                <img src="img/dota.jpg" width="450px">
-            </div> 
-            <br>
+            <table>
+            <tr><th colspan="6"><h1>Lista de juegos</h1></th></tr>
+            <tr>
+                <th>Imagen</th>
+                <th>precio</th>
+                <th>imagen</th>
+            </tr>
+            <?php
+              include("conexion.php");
+              $consulta = mysqli_query($db, "SELECT * FROM juegos");
+              while($mostrar=mysqli_fetch_array($consulta)){
+            
+            ?>
+            <tr>
+                <td><?php echo "<img src='img/".$mostrar['imagen'].".png' width='450' height='280'>"?> </td>
+                <td><?php echo $mostrar['nombre']?> </td>
+                <td><?php echo $mostrar['precio']?> </td>
+            </tr>
+            <?php echo $busqueda?>
+            <?php
+              }
+              ?>
+              </table>
+              
 
-                <FONT SIZE=6 COLOR="#DAA520">
-                   
-                <?php
-
-                    $db = new mysqli('localhost', 'root', '', 'abd_games');
-                    $consulta = mysqli_query($db, "SELECT * FROM juegos WHERE nombre = 'naraka'");
-                    $fila = mysqli_fetch_assoc($consulta);
-                    $nombre=strtoupper($fila["nombre"]);
-                    $precio=$fila["precio"];
-                    echo "&nbsp $nombre";
-                    echo "&nbsp $precio&nbsp€";
-
-                 ?>
-                 </FONT>
-
-
-            <br>
-            <div class="contenedor-imagenes2">
-                <img src="img/eldenRing.png" width="450px">
-                <img src="img/lol.jpg" width="450px">
-                <img src="img/pubg.jpg" width="450px">
-            </div>
-            <br>
-            <br>
-            <div class="contenedor-imagenes3">
-                <img src="img/gtaV.jpg" width="450px">
-                <img src="img/rainbow6.jpg" width="450px">
-                <img src="img/picoPark.png" width="450px">
-            </div> 
-
+              
+              
         </center>
 
     </body>

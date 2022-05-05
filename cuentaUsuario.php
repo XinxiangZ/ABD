@@ -44,15 +44,12 @@
         </center>
         
         <FONT SIZE=10 COLOR="#DAA520">  
-	    <?php
-		$nom = $_POST["nom"];
-		echo "&nbsp &nbspBienvenido ";
-		echo "$nom ";
-		$db = new mysqli("localhost","root","","abd_games");
-		if ($db->connect_errno) {
-				echo "ERROR Conexion";
-		}
-        ?> </FONT>
+
+        <?php
+            $variable1=($_GET['nom']);
+         echo $variable1;
+        ?>
+         </FONT>
 
         <FONT COLOR="white">
             <form action="datos.php" method="post">

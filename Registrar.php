@@ -12,22 +12,6 @@
         <?php
 
 
-        function conectar($host, $usuario, $contasenia, $db)
-        {
-
-            $db = @mysqli_connect($host, $usuario, $contasenia, $db);
-            return $db;
-        }
-
-        function desconectar($conexion)
-        {
-
-            if ($conexion) {
-
-                $ok = @mysqli_close($conexion);
-            }
-
-        }
 
         $busqueda = strtolower($_POST["nom"]);
         $contra = strtolower($_POST["con"]);
@@ -37,7 +21,7 @@
             echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>No se puede dejar los campos vacíos</p></FONT> </center>";
         } else {
 
-            $db = conectar('localhost', 'root', '', 'abd_games');
+                include("conexion.php");
 
             $sql = "SELECT * FROM usuario WHERE id = '$busqueda'";
             $consulta = mysqli_query($db, $sql);
@@ -48,12 +32,14 @@
                 echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Error: Usuario ya registrado</p></FONT> </center>";
             } else {
                 mysqli_query($db, "INSERT INTO usuario(id, contrasenia) VALUES ('$busqueda','$contra')");
-                include ("entredaPagina.html");
+                include ("tienda.php");
                 echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p> Usuario registrado con exito</p></FONT> </center>";
 			  
             }
 
-            $ok = mysqli_close($db);
+
+            
+            mysqli_close($db);
         }
 
 
