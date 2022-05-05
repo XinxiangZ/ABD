@@ -55,8 +55,8 @@
                     include ("entradaPagina.html");
                     echo " <center><FONT SIZE=5 COLOR=  '#ff3300' > <p>Contraseña incorrecta</p></FONT> </center>";
                 } else {
-                    
-                     Header("Location: tienda.php");
+                     Header("Location: cuentaUsuario.php");
+                     include ("cuentaUsuario.php");
                 }
             } else {
                 include ("entradaPagina.html");

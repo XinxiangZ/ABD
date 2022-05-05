@@ -24,10 +24,10 @@
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="tienda.php">Tienda</a></li>
-                    <li><a href="biblioteca.html">Biblioteca</a></li>
-                    <li><a href="cuentaUsuario.html">Cuenta</a></li>
-                    <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
+                        <li><a href="tienda.php">Tienda</a></li>
+                        <li><a href="biblioteca.php">Biblioteca</a></li>
+                        <li><a href="cuentaUsuario.php">Cuenta</a></li>
+                        <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </div>
