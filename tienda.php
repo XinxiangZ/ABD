@@ -76,7 +76,7 @@
 
                 ?>
                     <tr>
-                        <td><?php echo "<img src='img/" . $mostrar['imagen'] . ".png' width='450' height='280'>" ?> </td>
+                        <td><?php echo "<img src='img/" . $mostrar['imagen'] . ".png' width='400' height='230'>" ?> </td>
                         <?php $nombre=strtoupper($mostrar['nombre']);
                         $precio=$mostrar['precio'];
                         ?>

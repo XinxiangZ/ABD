@@ -63,7 +63,7 @@ table{
     border: 1px solid black;
     background: rgb(30, 77, 77);
     position: relative;
-    bottom: -200px;
+    bottom: -1350px;
     right: -500px;
     width: 400px;
     transform: translate(-50%,-50%);
