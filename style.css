@@ -55,3 +55,30 @@ nav ul li a:hover:before{
 
     width: 60%;
 }
+
+table{
+
+    margin:0;
+    border-collapse: collapse;
+    border: 1px solid black;
+    background: rgb(30, 77, 77);
+    position: relative;
+    bottom: -200px;
+    right: -500px;
+    width: 400px;
+    transform: translate(-50%,-50%);
+}
+
+td{
+    padding: 10px 40px;
+    border: 1px solid black;
+    text-align: center;
+    background: rgb(30, 77, 77);
+    font-weight: bold;
+}
+
+th{
+    padding: 10px;
+    border: 1px solid black;
+    background-color: rgb(10, 60, 104);
+}

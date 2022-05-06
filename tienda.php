@@ -7,15 +7,7 @@
         ABD Games - Tienda
     </title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .contenedor-imagenes {
-            display: flex;
-        }
 
-        .contenedor-imagenes img:first-child {
-            margin-right: 10px;
-        }
-    </style>
 
 </head>
 
@@ -69,13 +61,13 @@
             <table>
                 <tr>
                     <th colspan="6">
-                        <h1>Lista de juegos</h1>
+                        <h1><FONT SIZE=10 COLOR='#DAA520'> Lista de juegos</FONT></h1>
                     </th>
                 </tr>
                 <tr>
-                    <th>Imagen</th>
-                    <th>precio</th>
-                    <th>imagen</th>
+                    <th><FONT SIZE=10 COLOR='#DAA520'> Imagen</FONT></th>
+                    <th><FONT SIZE=10 COLOR='#DAA520'> Nombre</FONT></th>
+                    <th><FONT SIZE=10 COLOR='#DAA520'> Precio</FONT></th>
                 </tr>
                 <?php
                 include("conexion.php");
@@ -85,8 +77,11 @@
                 ?>
                     <tr>
                         <td><?php echo "<img src='img/" . $mostrar['imagen'] . ".png' width='450' height='280'>" ?> </td>
-                        <td><?php echo $mostrar['nombre'] ?> </td>
-                        <td><?php echo $mostrar['precio'] ?> </td>
+                        <?php $nombre=strtoupper($mostrar['nombre']);
+                        $precio=$mostrar['precio'];
+                        ?>
+                        <td><?php echo "<FONT SIZE=10 COLOR='#DAA520'> $nombre</FONT>" ?> </td>
+                        <td><?php echo "<FONT SIZE=10 COLOR='#DAA520'> $precio&nbsp€</FONT>" ?> </td>
                     </tr>
 
                 <?php
