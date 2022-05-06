@@ -20,13 +20,23 @@
 </head>
 
 <body>
+    <?php
+
+    if (isset($busqueda)) {
+        $variable1 = $busqueda;
+        
+    } else {
+        $variable1 = ($_GET['nom']);
+    }
+
+    ?>
     <header>
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="tienda.php?nom=<?php echo $busqueda ?>">Tienda</a></li>
-                    <li><a href="biblioteca.php?nom=<?php echo $busqueda ?>">Biblioteca</a></li>
-                    <li><a href="cuentaUsuario.php?nom=<?php echo $busqueda ?>">Cuenta</a></li>
+                    <li><a href="tienda.php?nom=<?php echo $variable1 ?>">Tienda</a></li>
+                    <li><a href="biblioteca.php?nom=<?php echo $variable1 ?>">Biblioteca</a></li>
+                    <li><a href="cuentaUsuario.php?nom=<?php echo $variable1 ?>">Cuenta</a></li>
                     <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
                 </ul>
             </nav>
@@ -57,32 +67,36 @@
             <br>
             <br>
             <table>
-            <tr><th colspan="6"><h1>Lista de juegos</h1></th></tr>
-            <tr>
-                <th>Imagen</th>
-                <th>precio</th>
-                <th>imagen</th>
-            </tr>
-            <?php
-              include("conexion.php");
-              $consulta = mysqli_query($db, "SELECT * FROM juegos");
-              while($mostrar=mysqli_fetch_array($consulta)){
-            
-            ?>
-            <tr>
-                <td><?php echo "<img src='img/".$mostrar['imagen'].".png' width='450' height='280'>"?> </td>
-                <td><?php echo $mostrar['nombre']?> </td>
-                <td><?php echo $mostrar['precio']?> </td>
-            </tr>
-            <?php echo $busqueda?>
-            <?php
-              }
-              ?>
-              </table>
-              
+                <tr>
+                    <th colspan="6">
+                        <h1>Lista de juegos</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Imagen</th>
+                    <th>precio</th>
+                    <th>imagen</th>
+                </tr>
+                <?php
+                include("conexion.php");
+                $consulta = mysqli_query($db, "SELECT * FROM juegos");
+                while ($mostrar = mysqli_fetch_array($consulta)) {
 
-              
-              
+                ?>
+                    <tr>
+                        <td><?php echo "<img src='img/" . $mostrar['imagen'] . ".png' width='450' height='280'>" ?> </td>
+                        <td><?php echo $mostrar['nombre'] ?> </td>
+                        <td><?php echo $mostrar['precio'] ?> </td>
+                    </tr>
+
+                <?php
+                }
+                ?>
+            </table>
+
+
+
+
         </center>
 
     </body>

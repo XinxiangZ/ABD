@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>
-            ABD Games - Mi biblioteca
-        </title>
-        <link rel="stylesheet" href="style.css">
 
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <title>
+        ABD Games - Mi biblioteca
+    </title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <?php
+    $variable1 = ($_GET['nom']);
+    ?>
+    <header>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="tienda.php?nom=<?php echo $variable1 ?>">Tienda</a></li>
+                    <li><a href="biblioteca.php?nom=<?php echo $variable1 ?>">Biblioteca</a></li>
+                    <li><a href="cuentaUsuario.php?nom=<?php echo $variable1 ?>">Cuenta</a></li>
+                    <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
 
     <body>
-        <header>
-            <div class="menu">
-                <nav>
-                    <ul>
-                    <li><a href="tienda.php?nom=<?php echo $busqueda ?>">Tienda</a></li>
-                    <li><a href="biblioteca.php?nom=<?php echo $busqueda ?>">Biblioteca</a></li>
-                    <li><a href="cuentaUsuario.php?nom=<?php echo $busqueda ?>">Cuenta</a></li>
-                    <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
-                    </ul>
-                </nav>
-            </div>
-    
-        </header>
 
-        <body>
-            <body style="background-color:#040405ee"> 
-                <center>
-                <div style="display:inline-block;vertical-align:top;"> <img src= "img/game.gif" width="250" height="280"> </div>
+        <body style="background-color:#040405ee">
+            <center>
+                <div style="display:inline-block;vertical-align:top;"> <img src="img/game.gif" width="250" height="280"> </div>
                 <div style="display:inline-block;">
                     <br>
                     <br>
                     <br>
                     <br>
                     <br>
-                    <FONT SIZE=15 COLOR= "#85C1E9"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mi biblioteca</FONT> 
-                    <FONT SIZE=6 COLOR=  "#FBFCFC" > <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Todos los juegos que tengo en mi cuenta</p></FONT>
+                    <FONT SIZE=15 COLOR="#85C1E9"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mi biblioteca</FONT>
+                    <FONT SIZE=6 COLOR="#FBFCFC">
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Todos los juegos que tengo en mi cuenta</p>
+                    </FONT>
                 </div>
-        
-                </center>
+
+            </center>
         </body>
-        
+
     </body>
+
 </html>

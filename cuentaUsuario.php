@@ -11,13 +11,16 @@
 </head>
 
 <body>
+        <?php
+            $variable1=($_GET['nom']);
+        ?>
     <header>
         <div class="menu">
             <nav>
                 <ul>
-                <li><a href="tienda.php?nom=<?php echo $busqueda ?>">Tienda</a></li>
-                    <li><a href="biblioteca.php?nom=<?php echo $busqueda ?>">Biblioteca</a></li>
-                    <li><a href="cuentaUsuario.php?nom=<?php echo $busqueda ?>">Cuenta</a></li>
+                    <li><a href="tienda.php?nom=<?php echo $variable1 ?>">Tienda</a></li>
+                    <li><a href="biblioteca.php?nom=<?php echo $variable1 ?>">Biblioteca</a></li>
+                    <li><a href="cuentaUsuario.php?nom=<?php echo $variable1 ?>">Cuenta</a></li>
                     <li><a href="entradaPagina.html">Cerrar Sesión</a></li>
                 </ul>
             </nav>
@@ -46,7 +49,7 @@
         <FONT SIZE=10 COLOR="#DAA520">  
 
         <?php
-            $variable1=($_GET['nom']);
+
          echo $variable1;
         ?>
          </FONT>
