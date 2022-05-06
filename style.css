@@ -59,14 +59,14 @@ nav ul li a:hover:before{
 table{
 
     margin:0;
-    border-collapse: collapse;
+    border-collapse: collapse; 
     border: 1px solid black;
-    background: rgb(67, 110, 110);
+    /* background: rgb(67, 110, 110);
     position: relative;
     bottom: -1350px;
-    right: -200px;
+    right: -600px;
     width: 400px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
 }
 
 td{

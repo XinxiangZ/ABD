@@ -72,8 +72,6 @@
                 </tr>
                 <?php
                 include("conexion.php");
-                $sql = 
-
                 $usuario = mysqli_query($db, "SELECT * FROM usuario WHERE id = '$variable1'");
                 $fila = mysqli_fetch_assoc($usuario);
                 $saldo=$fila['saldo'];
@@ -89,7 +87,7 @@
                         ?>
                         <td><?php echo "<FONT SIZE=7 COLOR='#DAA520'> $nombre</FONT>" ?> </td>
                         <td><?php echo "<FONT SIZE=7 COLOR='#DAA520'> $precio&nbsp€</FONT>" ?> </td>
-                        <td><?php echo "<FONT SIZE=7 COLOR='#DAA520'><a href='comprar.php?nom=".$variable1."&nomJuego=".$nombre."&precio=".$precio."'>Comprar</a></FONT>" ?> </td>
+                        <td><?php echo "<FONT SIZE=7 COLOR='#DAA520'><a href='comprar.php?nom=".$variable1."&nomJuego=".$nombre."&precio=".$precio."&imagen=".$mostrar['imagen']."'>Comprar</a></FONT>" ?> </td>
                     </tr>
                     
 
