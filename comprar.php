@@ -46,11 +46,11 @@
             <?php
             $usuario = mysqli_query($db, "SELECT * FROM usuario WHERE id = '$variable1'");
             $fila = mysqli_fetch_assoc($usuario);
+            $saldo = $fila['saldo'];
             try {
                 mysqli_query($db, "INSERT INTO usuariojuego (idUsuario, nomJuego) VALUES ('$variable1', '$juego')");
                 if($saldo<$precio){
                     mysqli_query($db, "DELETE FROM usuariojuego WHERE usuariojuego.idUsuario = '$variable1' AND usuariojuego.nomJuego = '$juego'");
-                    $saldo = $fila['saldo'];
                     echo "<h1><FONT SIZE=10 COLOR='#DAA520'> No tienes el saldo suficiente para comprar el juego</FONT></h1>";
                 }else{
                     
@@ -60,7 +60,6 @@
                 }
                
             } catch (mysqli_sql_exception $e) {
-                $saldo = $fila['saldo'];
                 echo "<h1><FONT SIZE=10 COLOR='#DAA520'> Ya has comprado el juego</FONT></h1>";
             }
 
