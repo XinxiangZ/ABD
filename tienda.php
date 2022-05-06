@@ -68,9 +68,16 @@
                     <th><FONT SIZE=10 COLOR='#DAA520'> Imagen</FONT></th>
                     <th><FONT SIZE=10 COLOR='#DAA520'> Nombre</FONT></th>
                     <th><FONT SIZE=10 COLOR='#DAA520'> Precio</FONT></th>
+                    <th><FONT SIZE=10 COLOR='#DAA520'> Comprar</FONT></th>
                 </tr>
                 <?php
                 include("conexion.php");
+                $sql = 
+
+                $usuario = mysqli_query($db, "SELECT * FROM usuario WHERE id = '$variable1'");
+                $fila = mysqli_fetch_assoc($usuario);
+                $saldo=$fila['saldo'];
+                echo "<FONT SIZE=7 COLOR='#DAA520'> El saldo del usuario $variable1 es: $saldo €</FONT>";
                 $consulta = mysqli_query($db, "SELECT * FROM juegos");
                 while ($mostrar = mysqli_fetch_array($consulta)) {
 
@@ -80,9 +87,11 @@
                         <?php $nombre=strtoupper($mostrar['nombre']);
                         $precio=$mostrar['precio'];
                         ?>
-                        <td><?php echo "<FONT SIZE=10 COLOR='#DAA520'> $nombre</FONT>" ?> </td>
-                        <td><?php echo "<FONT SIZE=10 COLOR='#DAA520'> $precio&nbsp€</FONT>" ?> </td>
+                        <td><?php echo "<FONT SIZE=7 COLOR='#DAA520'> $nombre</FONT>" ?> </td>
+                        <td><?php echo "<FONT SIZE=7 COLOR='#DAA520'> $precio&nbsp€</FONT>" ?> </td>
+                        <td><?php echo "<FONT SIZE=7 COLOR='#DAA520'><a href='comprar.php?nom=".$variable1."&nomJuego=".$nombre."&precio=".$precio."'>Comprar</a></FONT>" ?> </td>
                     </tr>
+                    
 
                 <?php
                 }
