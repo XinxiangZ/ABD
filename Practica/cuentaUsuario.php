@@ -12,7 +12,12 @@
 
 <body>
     <?php
+        include("conexion.php");
     $variable1 = ($_GET['nom']);
+    $usuario = mysqli_query($db, "SELECT * FROM usuario WHERE id = '$variable1'");
+    $fila = mysqli_fetch_assoc($usuario);
+    $saldo = $fila['saldo'];
+
     ?>
     <header>
         <div class="menu">
@@ -46,10 +51,10 @@
             </div>
             <div>
             <FONT SIZE=10 COLOR="#DAA520">
-
+            
                 <?php
-
-                echo "Usuario $variable1";
+                echo "Usuario $variable1 <br>";
+                echo "Saldo: $saldo € <br><br>";
                 ?>
             </FONT></div>
 
@@ -58,7 +63,7 @@
                     <fieldset>
                         <br>
                         <br>
-                        <FONT SIZE=4>&nbsp;&nbsp;&nbsp;Introduzca el saldo que quisieras recargar <p><br><input value="" type="number" step="any" name="saldo"></p>
+                        <FONT SIZE=4>&nbsp;&nbsp;&nbsp;Introduzca el saldo que quisieras recargar <p><br><input type="number" step="0.01" value="" name="saldo"></p>
                         <input type="hidden" name="nom" value=<?php echo $variable1?>>
                         <br>
                         <br>

@@ -44,7 +44,7 @@
                         <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Todos los juegos que tengo en mi cuenta</p>
                     </FONT>
                 </div>
-
+                <br> <br> <br>
                 <table>
                 <tr>
                     <th colspan="6">
