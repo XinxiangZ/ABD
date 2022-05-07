@@ -11,9 +11,9 @@
 </head>
 
 <body>
-        <?php
-            $variable1=($_GET['nom']);
-        ?>
+    <?php
+    $variable1 = ($_GET['nom']);
+    ?>
     <header>
         <div class="menu">
             <nav>
@@ -44,33 +44,32 @@
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mis datos personales</p>
                 </FONT>
             </div>
+            <div>
+            <FONT SIZE=10 COLOR="#DAA520">
+
+                <?php
+
+                echo "Usuario $variable1";
+                ?>
+            </FONT></div>
+
+            <FONT COLOR="white">
+                <form action="datos.php" method="post">
+                    <fieldset>
+                        <br>
+                        <br>
+                        <FONT SIZE=4>&nbsp;&nbsp;&nbsp;Introduzca el saldo que quisieras recargar <p><br><input value="" type="number" step="any" name="saldo"></p>
+                        <input type="hidden" name="nom" value=<?php echo $variable1?>>
+                        <br>
+                        <br>
+                    </fieldset>
+                    <br>
+                    <div style="text-align: center;"><button type="submit" class="button button2">Guardar</button></div>
+                </form>
+            </FONT>
         </center>
-        
-        <FONT SIZE=10 COLOR="#DAA520">  
 
-        <?php
 
-         echo $variable1;
-        ?>
-         </FONT>
-
-        <FONT COLOR="white">
-            <form action="datos.php" method="post">
-                <fieldset>
-                        <br>
-                        <legend>
-                            <FONT SIZE=6> <b>Mis datos personales </b></FONT>
-                        </legend>
-                        <br>
-                        <FONT SIZE=4 >&nbsp;&nbsp;&nbsp;Tlf <p><br><input type="text" name="tlf"></p>
-                        <br>
-                        <FONT SIZE=4>&nbsp;&nbsp;&nbsp;Direccion <p><br><input type="password" name="dir"></p>
-                        <br>
-                </fieldset>
-                <br>
-                <div style="text-align: center;"><button type="submit" class="button button2">Guardar</button></div>
-            </form>
-        </FONT>
     </body>
 
 </html>
